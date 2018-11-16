@@ -1,7 +1,6 @@
 import * as plist from "plist";
 import * as path from "path";
 import * as fs from "fs";
-import { stringify } from "querystring";
 var xcode = require('xcode');
 
 export interface iOSVersionInfo {
