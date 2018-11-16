@@ -20,11 +20,14 @@
   "homepage": "https://github.com/Mandaris-LLC/MD-Tools#readme",
   "dependencies": {
     "@types/plist": "^3.0.1",
+    "@types/shelljs": "^0.8.0",
     "bugsnag-build-reporter": "^1.0.0",
+    "bugsnag-sourcemaps": "^1.0.4",
     "commander": "^2.15.1",
     "gradle-to-js": "^1.2.0",
     "plist": "^3.0.1",
     "request": "^2.85.0",
+    "shelljs": "^0.8.3",
     "tmp": "0.0.33",
     "unzip": "^0.1.11",
     "xcode": "^1.0.0"

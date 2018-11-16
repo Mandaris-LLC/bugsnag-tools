@@ -1,5 +1,8 @@
 import * as path from "path";
 import * as fs from "fs";
+import { upload } from "bugsnag-sourcemaps"
+import { apiKey } from "..";
+import * as shell from "shelljs";
 
 export interface AndroidVersionInfo {
     app_version: string;
@@ -42,14 +45,36 @@ export function versionInfo(): Promise<AndroidVersionInfo> {
     })
 }
 
-export function generateSourcemap(): Promise<{ filePath: string }> {
+export function generateSourcemap(): Promise<{ minifiedPath: string, sourceMapPath: string }> {
     return new Promise((resolve, reject) => {
-
+        let result = shell.exec('react-native bundle \
+        --platform android \
+        --dev false \
+        --entry-file index.js \
+        --bundle-output android-release.bundle \
+        --sourcemap-output android-release.bundle.map')
+        console.log(result);
+        resolve({
+            minifiedPath: path.join(process.cwd(), 'android-release.bundle'),
+            sourceMapPath: path.join(process.cwd(), 'android-release.bundle.map')
+        });
     })
 }
 
-export function uploadSourcemap(file: string): Promise<any> {
+export function uploadSourcemap(sourceMap: string, minifiedFile: string, version: AndroidVersionInfo): Promise<any> {
     return new Promise((resolve, reject) => {
-
+        upload({
+            apiKey: apiKey,
+            appVersion: `${version.app_version} (${version.version_code})`,
+            sourceMap: sourceMap,
+            minifiedUrl: 'index.android.bundle',
+            minifiedFile: minifiedFile,
+            overwrite: true
+        }, function (err) {
+            if (err) {
+                return reject(err)
+            }
+            resolve()
+        });
     })
 }
