@@ -1,4 +1,4 @@
-import reportBuild from 'bugsnag-build-reporter';
+import * as reportBuild from 'bugsnag-build-reporter';
 import { apiKey } from '..';
 import { iOSVersionInfo } from './ios';
 import { AndroidVersionInfo } from './android';
