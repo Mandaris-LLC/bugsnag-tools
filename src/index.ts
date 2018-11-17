@@ -4,15 +4,17 @@ import reportRelease from './generators/reporter';
 import * as iOS from './generators/ios';
 import * as Android from './generators/android';
 import * as fs from 'fs';
+import * as path from 'path';
 
 export let apiKey: string;
 
-commander.version('1.0').description('Mandaris Bugsnag CLI Tools')
+commander
+    .version(JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf8'))['version'])
+    .description('A tool to upload source maps for react native appliactions on iOS and Android')
 
 commander
-    .command('auto <apiKey> <releaseStage>')
+    .command('auto <apiKey> <releaseStage>', 'Automatically generates and uploads all sourcemaps and a new release for both platforms')
     .alias('a')
-    .description('Automatically generates and uploads all sourcemaps and a new release for iOS and Android')
     .action((key, releaseStage) => {
         apiKey = key;
         iOSProcedure(releaseStage).then(() => {
@@ -25,8 +27,7 @@ commander
     })
 
 commander
-    .command('ios <apiKey> <releaseStage>')
-    .description('Automatically generates and uploads all sourcemaps and a new release for iOS')
+    .command('ios <apiKey> <releaseStage>', 'Automatically generates and uploads all sourcemaps and a new release for iOS')
     .action((key, releaseStage) => {
         apiKey = key;
         iOSProcedure(releaseStage).then(() => {
@@ -37,8 +38,7 @@ commander
     })
 
 commander
-    .command('android <apiKey> <releaseStage>')
-    .description('Automatically generates and uploads all sourcemaps and a new release for android')
+    .command('android <apiKey> <releaseStage>', 'Automatically generates and uploads all sourcemaps and a new release for android')
     .action((key, releaseStage) => {
         apiKey = key;
         iOSProcedure(releaseStage).then(() => {

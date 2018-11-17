@@ -1,5 +1,5 @@
 {
-  "name": "md-tools",
+  "name": "bugsnag-tools",
   "preferGlobal": true,
   "bin": "lib/index.js",
   "version": "1.0.0",
