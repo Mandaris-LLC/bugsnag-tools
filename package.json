@@ -1,26 +1,25 @@
 {
-  "name": "bugsnag-tools",
+  "name": "rn-bugsnag-sourcemap-tools",
   "preferGlobal": true,
   "bin": "lib/index.js",
   "version": "1.0.0",
-  "description": "Mandaris CLI",
+  "description": "A tool to upload source maps for react native appliactions on iOS and Android",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mandaris-LLC/MD-Tools.git"
+    "url": "git+https://github.com/Mandaris-LLC/bugsnag-tools.git"
   },
   "author": "Mandaris LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Mandaris-LLC/MD-Tools/issues"
+    "url": "https://github.com/Mandaris-LLC/bugsnag-tools/issues"
   },
-  "homepage": "https://github.com/Mandaris-LLC/MD-Tools#readme",
+  "homepage": "https://github.com/Mandaris-LLC/bugsnag-tools#readme",
   "dependencies": {
-    "@types/plist": "^3.0.1",
-    "@types/shelljs": "^0.8.0",
     "bugsnag-build-reporter": "^1.0.0",
     "bugsnag-sourcemaps": "^1.0.4",
     "commander": "^2.15.1",
@@ -33,6 +32,9 @@
     "xcode": "^1.0.0"
   },
   "devDependencies": {
+    "typescript": "3.1.4",
+    "@types/plist": "^3.0.1",
+    "@types/shelljs": "^0.8.0",
     "@types/commander": "^2.12.2",
     "@types/node": "^9.6.5",
     "@types/request": "^2.47.0",
