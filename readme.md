@@ -1,6 +1,7 @@
 Usage: rn-bugsnag-sourcemap-tools [options] [command]
 
 A tool to upload source maps for react native appliactions on iOS and Android
+
 This tool automatically reads out app/build version numbers from xcode / gradle projects
 
 Options:
