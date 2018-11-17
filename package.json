@@ -1,5 +1,5 @@
 {
-  "name": "rn-bugsnag-sourcemap-tools",
+  "name": "@mandarisllc/rn-bugsnag-sourcemap-tools",
   "preferGlobal": true,
   "bin": "lib/index.js",
   "version": "1.0.0",
