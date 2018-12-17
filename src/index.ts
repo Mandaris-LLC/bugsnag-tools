@@ -13,7 +13,8 @@ commander
     .description('A tool to upload source maps for react native appliactions on iOS and Android')
 
 commander
-    .command('auto <apiKey> <releaseStage>', 'Automatically generates and uploads all sourcemaps and a new release for both platforms')
+    .command('auto <apiKey> <releaseStage>')
+    .description('Automatically generates and uploads all sourcemaps and a new release for both platforms')
     .alias('a')
     .action((key, releaseStage) => {
         apiKey = key;
@@ -27,7 +28,8 @@ commander
     })
 
 commander
-    .command('ios <apiKey> <releaseStage>', 'Automatically generates and uploads all sourcemaps and a new release for iOS')
+    .command('ios <apiKey> <releaseStage>')
+    .description('Automatically generates and uploads all sourcemaps and a new release for iOS')
     .action((key, releaseStage) => {
         apiKey = key;
         iOSProcedure(releaseStage).then(() => {
@@ -38,7 +40,8 @@ commander
     })
 
 commander
-    .command('android <apiKey> <releaseStage>', 'Automatically generates and uploads all sourcemaps and a new release for android')
+    .command('android <apiKey> <releaseStage>')
+    .description('Automatically generates and uploads all sourcemaps and a new release for android')
     .action((key, releaseStage) => {
         apiKey = key;
         iOSProcedure(releaseStage).then(() => {
