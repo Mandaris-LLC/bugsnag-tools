@@ -32,7 +32,7 @@ export function versionInfo(): Promise<iOSVersionInfo> {
                 let plistData = plist.parse(infoPlistData);
                 let appVersion = plistData['CFBundleShortVersionString']
                 let bundle = config[releaseScheme].buildSettings['CURRENT_PROJECT_VERSION']
-                console.log(typeof bundle)
+                console.log(config[releaseScheme])
                 if (typeof appVersion === 'string' && typeof bundle === 'number') {
                     resolve({
                         build: bundle.toString(),
