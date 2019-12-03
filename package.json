@@ -6,10 +6,7 @@
   "description": "A tool to upload source maps for react native appliactions on iOS and Android",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "scripts": {
-    "postinstall": "tsc",
-    "build": "tsc"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mandaris-LLC/bugsnag-tools.git"
