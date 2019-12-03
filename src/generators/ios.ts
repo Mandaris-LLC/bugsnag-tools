@@ -29,10 +29,8 @@ export function versionInfo(): Promise<iOSVersionInfo> {
                 const config = proj.pbxXCBuildConfigurationSection();
                 const releaseScheme = Object.keys(config).find(key => config[key].name === 'Release')!;
                 let infoPlistData = fs.readFileSync(path.join(currentDir, 'ios', targets[Object.keys(targets)[0]].buildSettings['INFOPLIST_FILE']), 'utf8');
-                let plistData = plist.parse(infoPlistData);
-                let appVersion = plistData['CFBundleShortVersionString']
+                let appVersion = config[releaseScheme].buildSettings['MARKETING_VERSION']
                 let bundle = config[releaseScheme].buildSettings['CURRENT_PROJECT_VERSION']
-                console.log(config[releaseScheme])
                 if (typeof appVersion === 'string' && typeof bundle === 'number') {
                     resolve({
                         build: bundle.toString(),
