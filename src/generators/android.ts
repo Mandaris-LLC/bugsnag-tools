@@ -21,6 +21,7 @@ export function versionInfo(): Promise<AndroidVersionInfo> {
             }
         }
         if (gradleFile) {
+            console.log(gradleFile)
             try {
                 var g2js = require('gradle-to-js/lib/parser');
                 return g2js.parseFile(path.join(currentDir, 'android', 'app', gradleFile)).then(function (plistData) {
