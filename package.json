@@ -21,7 +21,7 @@
     "bugsnag-build-reporter": "^1.0.0",
     "bugsnag-sourcemaps": "^1.0.4",
     "commander": "^2.15.1",
-    "gradle-to-js": "^1.2.0",
+    "gradle-to-js": "2.0.0",
     "plist": "^3.0.1",
     "request": "^2.85.0",
     "shelljs": "^0.8.3",
