@@ -44,7 +44,7 @@ commander
     .description('Automatically generates and uploads all sourcemaps and a new release for android')
     .action((key, releaseStage) => {
         apiKey = key;
-        iOSProcedure(releaseStage).then(() => {
+        androidProcedure(releaseStage).then(() => {
             console.info('Bugsnag CLI finished successfully');
         }).catch((error) => {
             console.error(error);
