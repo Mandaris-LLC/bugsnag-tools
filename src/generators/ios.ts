@@ -50,7 +50,7 @@ export function versionInfo(): Promise<iOSVersionInfo> {
 
 export function generateSourcemap(): Promise<{ minifiedPath: string, sourceMapPath: string }> {
     return new Promise((resolve, reject) => {
-        let result = shell.exec('react-native bundle \
+        let result = shell.exec('npx react-native bundle \
         --platform ios \
         --dev false \
         --entry-file index.js \
