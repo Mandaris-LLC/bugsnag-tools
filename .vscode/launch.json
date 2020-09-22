@@ -1,21 +1,29 @@
 {
-    // Use IntelliSense to learn about possible Node.js debug attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
+    // See http://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
         {
-            "type": "node",
-            "request": "launch",
-            "name": "Programm starten",
-            "env": {},
+            "command": "./node_modules/.bin/tsc",
+            "label": "Typescript Build",
+            "type": "shell",
             "args": [
-                "t",
-                "t",
-                "t"
+                "-p",
+                ".",
+                "-w"
             ],
-            "console": "integratedTerminal",
-            "program": "${workspaceRoot}/lib/index.js"
+            "problemMatcher": "$tsc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "never"
+            },
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
         }
     ]
 }
