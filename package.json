@@ -27,7 +27,7 @@
     "shelljs": "^0.8.3",
     "tmp": "0.0.33",
     "unzip": "^0.1.11",
-    "xcode": "^1.0.0"
+    "xcode": "^3.0.1"
   },
   "devDependencies": {
     "typescript": "3.1.4",
